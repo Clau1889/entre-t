@@ -1,0 +1,20 @@
+var config = {
+    apiKey: "AIzaSyDj_C75Jq1mQpeBNjSGEpJPLhjSIm_-IFE",
+    authDomain: "entre-t.firebaseapp.com",
+    databaseURL: "https://entre-t.firebaseio.com",
+    projectId: "entre-t",
+    storageBucket: "entre-t.appspot.com",
+    messagingSenderId: "1017925579785"
+};
+
+firebase.initializeApp(config);
+
+/* Función para guardar la info de los usuarios */
+function saveUser(user) {
+    userInfo = {
+        uid: user.uid,
+        name: user.displayName,
+        photo: user.photoURL,
+    }
+    firebase.database().ref("users/" + user.uid).set(userInfo);
+}
