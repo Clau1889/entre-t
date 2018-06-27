@@ -1,20 +1,16 @@
-var config = {
-    apiKey: "AIzaSyDj_C75Jq1mQpeBNjSGEpJPLhjSIm_-IFE",
-    authDomain: "entre-t.firebaseapp.com",
-    databaseURL: "https://entre-t.firebaseio.com",
-    projectId: "entre-t",
-    storageBucket: "entre-t.appspot.com",
-    messagingSenderId: "1017925579785"
-};
+document.getElementById("logout").addEventListener('click',function (){
+    //console.log('click');
+    firebase.auth().signOut();
+});
 
-firebase.initializeApp(config);
-
-/* Función para guardar la info de los usuarios */
-function saveUser(user) {
-    userInfo = {
-        uid: user.uid,
-        name: user.displayName,
-        photo: user.photoURL,
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      //console.log(user);
+      //console.log(user.displayName);
+      //console.log(user.photoURL);
+      //console.log(user.uid)
+    } else {
+      console.log('desloggeado');
+      window.location="index.html";
     }
-    firebase.database().ref("users/" + user.uid).set(userInfo);
-}
+});
