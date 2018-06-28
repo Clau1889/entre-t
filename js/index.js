@@ -1,16 +1,14 @@
-$(document).ready(function () {
+var config = {
+    apiKey: "AIzaSyDj_C75Jq1mQpeBNjSGEpJPLhjSIm_-IFE",
+    authDomain: "entre-t.firebaseapp.com",
+    databaseURL: "https://entre-t.firebaseio.com",
+    projectId: "entre-t",
+    storageBucket: "entre-t.appspot.com",
+    messagingSenderId: "1017925579785"
+};
 
-    // // ******************FUNCION PARA SPLASH******************//
-    // setTimeout(function () {
-    //     $('#splash').fadeOut(500);
-    // }, 1000);
-});    
+firebase.initializeApp(config);
 
-document.getElementById("btn-signup").addEventListener('click',function(){
-    //console.log("sign up");
-    $('#modal-SignUp').modal('show');
-});
-    
 /* Variable global con la información del usuario */
 var userInfo = {};
 
@@ -24,18 +22,16 @@ function saveUser(user) {
 
    firebase.database().ref("users/" + user.uid).set(userInfo);
 };
-
+    
 var provider = new firebase.auth.GoogleAuthProvider();
 
 $("btn-login").click(function(){
     //console.log('login');
     firebase.auth().signInWithPopup(provider).then(function(result){
-        $('#btn-signup').hide();
         saveUser(result.user);
-        //Sconsole.log(result.user);
-        $('#photo-user').append("<img src='" + result.user.photoURL + "' />");
-        //console.log(result.user.photoURL);
-        $('.user-name').append(result.user.displayName);
+        //$('#photo-user').append("<img src='" + result.user.photoURL + "' />");
+        //$('.user-name').html('Lourdes Atilano');
+        //$('.user-name').append(result.user.displayName);
         //console.log(result.user.displayName);
     })
     .catch(function(error) {
@@ -64,3 +60,15 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
+$(document).ready(function () {
+
+    // // ******************FUNCION PARA SPLASH******************//
+    // setTimeout(function () {
+    //     $('#splash').fadeOut(500);
+    // }, 1000);
+});    
+
+document.getElementById("btn-signup").addEventListener('click',function(){
+    //console.log("sign up");
+    $('#modal-SignUp').modal('show');
+});

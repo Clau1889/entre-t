@@ -28,18 +28,51 @@ body{
     width: 100%;
 }
 
-#photo-user {
+.photo-login {
     height: 2.5em;
     width: 2.5em;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 1px solid blue;
+    border-radius: 50%;
+}
+
+.user-name {
+    height: 28px;
+    position: relative;
+    padding-top: 19px;
+    padding-left: 8px;
+    /*border: 1px solid blue;*/
 }
 
 #card-btns{
     position: relative;
 }
 
+/*hidden{
+    display: none;
+}*/
+
+.navbar-brand {
+    margin-right: 0;
+}
+
+.offsert-3 {
+    margin-left: 25%;
+}
+
+/* User View */
+main.border div.jumbotron{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#big-img {
+    border-radius: 50%;
+    left: 33%;
+    right: 33%;
+    top: 90%;
+    position: relative;
+}
 
 
 
