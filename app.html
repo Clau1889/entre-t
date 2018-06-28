@@ -116,38 +116,34 @@
         <br>
 
         <!-- CONTENEDOR PRINCIPAL -->
-        <main>
-        <!-- MAIN -->
-        <main class="border ">
-            <!--BUTTON SECTION-->
-            <!-- <section>
-                <button id="angry-button" type="button">ENOJO</button>
-                <button id="sad-button" type="button">TRISTEZA</button>
-                <button id="romance-button" type="button">ROMANCE</button>
-                <button id="motivational-button" type="button">MOTIVADO</button>
-            </section> -->
+        <main class="row">
             <!-- AREA VIDEOS -->
-            <section id="videos-area">
-                <h1>VIDEOS</h1>
-                <div id="characters-container"></div>
-                <div id="template-character" style="display:none">
+            <section id="videos-area" class="col-10 offset-1">
+                <div class="row"> 
+                <h3 class="col-9">Videos</h3>
+                </div>
+                <div id="characters-container" class="row"></div>
+                <div id="template-character" class="col-8 offset-2 rounded" style="display:none">
                     <div>
                         <iframe width="100%" height="315" src="{{video}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <h3>{{title}}</h3>
+                        <h5 class="text-center">{{title}}</h5>
                     </div>
                 </div>
             </section>
-
-            <!-- MUSIC VIDEOS -->
-
-            <section id="music-area" class="border"></section>
-            <h1>Musica</h1>
-            <div id="song">
-                <!-- <iframe src="https://open.spotify.com/embed/track/{{id}}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
-            </div>
-
-            <!-- BOOKS VIDEOS -->
-            <section id="books-area border" class="border">
+            <br>
+        
+            <!-- MUSIC -->
+            <section id="music-area" class="row"></section>
+                <h3 class="col-10 offset-1">Musica</h3>
+                <div id="song" class="col-10 offset-2  w-130 margin-top: 1rem">
+                    <!-- <iframe src="https://open.spotify.com/embed/track/{{id}}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+                </div>
+                
+        
+        
+            <!-- BOOKS-->
+            <section id="books-area border" class="col-11 offset-1">
+                <h3>Libros</h3>
                 <div id="music-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
