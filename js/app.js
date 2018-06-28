@@ -49,14 +49,14 @@ $(document).ready(function(){
 
     //**************************CÓDIGO AMBAR**********************************************
     //COMIENZA CÓDIGO SPOTIFY
-    var apiKey = "BQCe-j3lY7L_WZ88QzCzir3UY2KjecsArRhAqVY32B-ndBMFEtALthjiNRzFZB9AcZbWrVQupzmEsLBM6Xjj37xDZ1aZyO3KEW0n2zWJx41cP5EglFB7Y6wjUM1ouP0vT3J8KxRRWvrbGMGgmpM-on7I5t7QZAgLr1ykYDQhWerfFlc_J6Fj5Ae5wGSmOA8PUAoO1wXJD1vAt-I4nYlGfWrZ8dD8rK8GKznpYJObaxPI3Dx0VROub5QCbkZ82axkUGKCALc";
+    var apiKey = "BQBC8KJxYcpXAs6_KRj0QsvdjqFW6qrJMmTYJ9d9QqYllzKj_oamVGRJPGAgYsvgfKmgC037YFwZTRQDLrQ53C0COVXiwqVBsYivr0TERnqhKsCzUEobLP62DdaW4qyQY4qJOTuvgksHaUm0_FdpCv0S5S8v_Vy2htAQHfULHpfAaS9l9IzZzpu2EtDRbkcE3wzsMba8ajpakhn1C6z96avZ0fEVhpziNPoLrw6fT0tBAmNJgcpwE4DErF0bxOsWYUGoMyg";
 
     
     // la variable search se declarará antes y guardará el valor del input del buscador
     // search = encodeURIComponent(search);// parsea el valor del input si tiene espacios.
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/search?q=maroon%20five&type=track&market=mx&limit=10',
+        url: 'https://api.spotify.com/v1/search?q=sad&type=track&market=mx&limit=10',
 
         headers: {
             'Authorization': 'Bearer ' + apiKey
@@ -65,8 +65,13 @@ $(document).ready(function(){
             console.log(response);
         },
         error: function (xhr, ajaxOptions, thrownError) {
-            alert(xhr.status);
-            alert(thrownError);
+            if(xhr.status == 401){
+                console.log("token expirado");
+            } else {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+            
         }
     });
 
