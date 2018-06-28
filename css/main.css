@@ -78,6 +78,14 @@ main.border div.jumbotron{
     position: relative;
     left: 2em;
 }
+/* add View */
+#h2-user-view{
+    padding-top: 20%;
+}
+
+#logo-add {
+    padding-left: 43%;
+}
 
 /*Books Section*/
 
