@@ -24,10 +24,9 @@ document.getElementById("btn-signup").addEventListener('click',function(){
 
 });
 
-/* Función para guardar usuarios nuevos en database */
+/* Función para guardar usuarios nuevos en database 
 function saveNewUsers(email,password){
-
-};
+};*/
 
 
 
