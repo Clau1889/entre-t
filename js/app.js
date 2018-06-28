@@ -49,14 +49,14 @@ $(document).ready(function(){
 
     //**************************CÓDIGO AMBAR**********************************************
     //COMIENZA CÓDIGO SPOTIFY
-    var apiKey = "BQBC8KJxYcpXAs6_KRj0QsvdjqFW6qrJMmTYJ9d9QqYllzKj_oamVGRJPGAgYsvgfKmgC037YFwZTRQDLrQ53C0COVXiwqVBsYivr0TERnqhKsCzUEobLP62DdaW4qyQY4qJOTuvgksHaUm0_FdpCv0S5S8v_Vy2htAQHfULHpfAaS9l9IzZzpu2EtDRbkcE3wzsMba8ajpakhn1C6z96avZ0fEVhpziNPoLrw6fT0tBAmNJgcpwE4DErF0bxOsWYUGoMyg";
+    var apiKey = "BQAnCSZCdJIrG3djPLvmdT67c5jKa6RuMRTUPVuMBjywkqA6O4Bsz3FZ_r5tZMvnc6g265246IaAS0PnIfeMy0UcYobLgqMjwXx8BisrsgTum4B8Hk6JZnh11VVmmXTrrg1CRV4d4oDhY56xeTHUYgzmuYUKJLS0bpqFxcdr0E-erHQ91p277uTUWXay_dHLM1itWXIIpARPtfVSaoCJrhky7bqdhby5T8j2XLa9QWJZbmfK75WBbxixcYrHd4LFlHWM-5o";
 
     
     // la variable search se declarará antes y guardará el valor del input del buscador
     // search = encodeURIComponent(search);// parsea el valor del input si tiene espacios.
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/search?q=sad&type=track&market=mx&limit=10',
+        url: 'https://api.spotify.com/v1/search?q=sad%20music%20&type=track&market=mx&limit=3',
 
         headers: {
             'Authorization': 'Bearer ' + apiKey
