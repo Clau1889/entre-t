@@ -1,43 +1,38 @@
-$(document).ready(function () {
+var config = {
+    apiKey: "AIzaSyDj_C75Jq1mQpeBNjSGEpJPLhjSIm_-IFE",
+    authDomain: "entre-t.firebaseapp.com",
+    databaseURL: "https://entre-t.firebaseio.com",
+    projectId: "entre-t",
+    storageBucket: "entre-t.appspot.com",
+    messagingSenderId: "1017925579785"
+};
 
-    // // ******************FUNCION PARA SPLASH******************//
-    // setTimeout(function () {
-    //     $('#splash').fadeOut(500);
-    // }, 1000);
-});    
+firebase.initializeApp(config);
 
-document.getElementById("btn-signup").addEventListener('click',function(){
-    //console.log("sign up");
-    $('#modal-SignUp').modal('show');
-    
-    /*firebase.auth().signInWithPopup(provider).then(function (result) {
-        saveNewUsers(email, passwordUser);
+/* Variable global con la información del usuario */
+var userInfo = {};
 
-        var emailUser = $('#input-email').val();
-        var passwordUser = $('#input-password').val();
+/* Función para guardar la info de los usuarios */
+function saveUser(user) {
+    var userInfo = {
+        uid: user.uid,
+        name: user.displayName,
+        photo: user.photoURL,
     };
 
-    firebase.database().ref("users/"+ user.uid).set(userInfo);
+   firebase.database().ref("users/" + user.uid).set(userInfo);
+};
+    
+var provider = new firebase.auth.GoogleAuthProvider();
 
-    $('#input-email').val('');
-    $('#input-password').val('');*/
-
-});
-
-/* Función para guardar usuarios nuevos en database 
-function saveNewUsers(email,password){
-};*/
-
-
-
-document.getElementById("btn-login").addEventListener('click',function(){
+$("btn-login").click(function(){
     //console.log('login');
-    
-    var provider = new firebase.auth.GoogleAuthProvider();
-    
-    firebase.auth().signInWithPopup(provider)
-    .then(function(result){
+    firebase.auth().signInWithPopup(provider).then(function(result){
         saveUser(result.user);
+        //$('#photo-user').append("<img src='" + result.user.photoURL + "' />");
+        //$('.user-name').html('Lourdes Atilano');
+        //$('.user-name').append(result.user.displayName);
+        //console.log(result.user.displayName);
     })
     .catch(function(error) {
         // Handle Errors here.
@@ -65,3 +60,15 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
+$(document).ready(function () {
+
+    // // ******************FUNCION PARA SPLASH******************//
+    // setTimeout(function () {
+    //     $('#splash').fadeOut(500);
+    // }, 1000);
+});    
+
+document.getElementById("btn-signup").addEventListener('click',function(){
+    //console.log("sign up");
+    $('#modal-SignUp').modal('show');
+});

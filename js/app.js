@@ -1,5 +1,5 @@
 function music(clave){
-    var apiKeySong = "BQAr97lrlB0_6zkk8Rv50FE-Zv4Kg7ig2qh2xS5xdRq5G0-JWyF-A1PpN50yKLlFtCyf29H73r0rEgw3_0Ls0jHn2mn3HmTJYNO-tVp-nM4T4-jcjNsDw0ufGfUYQXkNBG1QgfhA4xl1ZoVyw9tcq3kEFSQibj-O4jD0Cgdt1qSHDH83dcJgkRtAZIkkYiniEVb9xB5urWxj7IlcH6JuUDT5vuDB2oQ2rvSxG-SQVIPJvKpBOPD6wQUMGjLunlK8rf-LA6k";
+    var apiKeySong = "BQCJCnYnpfHBvcfrzFGMRu7xwMdq33BaZJhX8cQmckL08f2Th3KTUZnqZL6aoeJttI_Ic27q_2bvF2gV3emLYawMhNPwZEHMLRxxhYnBzCRZz8HV_YdvAbMTwJ7DLYBv4pgn0GCw2d-GYlLZ4A9qJCG8_P3izD-JNf-Aeh4TIaMm1huC9n1y_V1oMCKVs0woMqxYM7EK4Q9NtyVFz-UPWJmOaTQpyjRtxiFMG55gjSgDQqCfwx1rjTUGEIIWhltiILIK-K0";
 
     function fillTemplateSong(template, data) {
         var finalTemplate = "";
@@ -280,17 +280,19 @@ $(document).ready(function(){
 
 });
 
-// firebase.auth().onAuthStateChanged(function(user) {
-//     if (user) {
-//       //console.log(user);
-//       //console.log(user.displayName);
-//       //console.log(user.photoURL);
-//       //console.log(user.uid)
-//     } else {
-//       console.log('desloggeado');
-//       window.location="index.html";
-//     }
-// });
+/*
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      //console.log(user);
+       //console.log(user.displayName);
+      //console.log(user.photoURL);
+       //console.log(user.uid)
+       4('#profile-user').removeClass(hidden);
+     } else {
+       console.log('desloggeado');
+       window.location="index.html";
+     }
+});*/
 
 
 function fillTemplate(template, data) {
