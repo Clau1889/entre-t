@@ -10,13 +10,15 @@ var config = {
 firebase.initializeApp(config);
 
 /* Variable global con la información del usuario */
-var userInfo = {
-    uid: user.uid,
-    name: user.displayName,
-    photo: user.photoURL,
-};
+var userInfo = {};
 
 /* Función para guardar la info de los usuarios */
 function saveUser(user) {
+    userInfo = {
+        uid: user.uid,
+        name: user.displayName,
+        photo: user.photoURL,
+    };
+
    firebase.database().ref("users/" + user.uid).set(userInfo);
-}
+};
