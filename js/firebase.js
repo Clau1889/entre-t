@@ -14,7 +14,7 @@ var userInfo = {};
 
 /* Función para guardar la info de los usuarios */
 function saveUser(user) {
-    userInfo = {
+    var userInfo = {
         uid: user.uid,
         name: user.displayName,
         photo: user.photoURL,

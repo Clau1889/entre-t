@@ -9,35 +9,34 @@ $(document).ready(function () {
 document.getElementById("btn-signup").addEventListener('click',function(){
     //console.log("sign up");
     $('#modal-SignUp').modal('show');
+});
     
-    /*firebase.auth().signInWithPopup(provider).then(function (result) {
-        saveNewUsers(email, passwordUser);
+/* Variable global con la información del usuario */
+var userInfo = {};
 
-        var emailUser = $('#input-email').val();
-        var passwordUser = $('#input-password').val();
+/* Función para guardar la info de los usuarios */
+function saveUser(user) {
+    var userInfo = {
+        uid: user.uid,
+        name: user.displayName,
+        photo: user.photoURL,
     };
 
-    firebase.database().ref("users/"+ user.uid).set(userInfo);
+   firebase.database().ref("users/" + user.uid).set(userInfo);
+};
 
-    $('#input-email').val('');
-    $('#input-password').val('');*/
+var provider = new firebase.auth.GoogleAuthProvider();
 
-});
-
-/* Función para guardar usuarios nuevos en database 
-function saveNewUsers(email,password){
-};*/
-
-
-
-document.getElementById("btn-login").addEventListener('click',function(){
+$("btn-login").click(function(){
     //console.log('login');
-    
-    var provider = new firebase.auth.GoogleAuthProvider();
-    
-    firebase.auth().signInWithPopup(provider)
-    .then(function(result){
+    firebase.auth().signInWithPopup(provider).then(function(result){
+        $('#btn-signup').hide();
         saveUser(result.user);
+        //Sconsole.log(result.user);
+        $('#photo-user').append("<img src='" + result.user.photoURL + "' />");
+        //console.log(result.user.photoURL);
+        $('.user-name').append(result.user.displayName);
+        //console.log(result.user.displayName);
     })
     .catch(function(error) {
         // Handle Errors here.
