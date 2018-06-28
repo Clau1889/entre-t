@@ -1,3 +1,65 @@
+function music(clave){
+    var apiKeySong = "BQAr97lrlB0_6zkk8Rv50FE-Zv4Kg7ig2qh2xS5xdRq5G0-JWyF-A1PpN50yKLlFtCyf29H73r0rEgw3_0Ls0jHn2mn3HmTJYNO-tVp-nM4T4-jcjNsDw0ufGfUYQXkNBG1QgfhA4xl1ZoVyw9tcq3kEFSQibj-O4jD0Cgdt1qSHDH83dcJgkRtAZIkkYiniEVb9xB5urWxj7IlcH6JuUDT5vuDB2oQ2rvSxG-SQVIPJvKpBOPD6wQUMGjLunlK8rf-LA6k";
+
+    function fillTemplateSong(template, data) {
+        var finalTemplate = "";
+        console.log(template); 
+        $("#song").html("");
+        // var finalTemplate ="";
+        for(var index in data){
+            console.log(template); 
+            console.log("lala");
+            var value = data[index];
+            console.log(value)
+            // template = template.replace(new RegExp('{{'+index+'}}', 'g'), escapeHtml(value) );
+            finalTemplate = template.replace('{{id}}', value);
+            console.log(finalTemplate);
+
+            $("#song").append(finalTemplate)
+        };
+        
+        return template;
+    };
+
+    $.ajax({
+        url: `https://api.spotify.com/v1/search?q=${clave}%20music%20&type=track&market=mx&limit=3`,
+
+        headers: {
+            'Authorization': 'Bearer ' + apiKeySong
+        },
+        success: function(response){
+            console.log(response);
+            var data = [];
+            var template = '<iframe src="https://open.spotify.com/embed/track/{{id}}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            var $containerSongs = $("#music-area");
+            $containerSongs.html("");
+            console.log(template);
+
+            response.tracks.items.forEach( function(song){
+                data.push(song.id);
+                
+                console.log(data);
+            });
+
+            var filledTemplate = fillTemplateSong(template, data);
+            // $containerSongs.append(filledTemplate);
+
+
+
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            if(xhr.status == 401){
+                console.log("token expirado");
+            } else {
+                alert(xhr.status);
+                alert(thrownError);
+            }  
+        }
+    });
+
+}
+
 $(document).ready(function(){
     //INICIALIZACION CARRUSEL
     $('.carousel').carousel({
@@ -9,26 +71,30 @@ $(document).ready(function(){
 
     $('#angry-button').click(function(){
     //MUESTRA DOCUMENTALES (ENOJO)
-    $('#characters-container').html('');
-    $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/search?type=video&q=documentales&maxResults=3&part=snippet&key=' + apiKey,
-        success: function(response){
+        $('#characters-container').html('');
+        $.ajax({
+            url: 'https://www.googleapis.com/youtube/v3/search?type=video&q=documentales&maxResults=3&part=snippet&key=' + apiKey,
+            success: function(response){
 
-        var template = $('#template-character').html();
-        var $characters = $('#characters-container');
+            var template = $('#template-character').html();
+            var $characters = $('#characters-container');
 
-        response.items.forEach(function(character){
+            response.items.forEach(function(character){
 
-                var data = {
-                    video: 'https://www.youtube.com/embed/'+character.id.videoId,
-                    title: character.snippet.title
-                };
-                
-                var filledTemplate = fillTemplate(template, data);
-                $characters.append(filledTemplate);
+                    var data = {
+                        video: 'https://www.youtube.com/embed/'+character.id.videoId,
+                        title: character.snippet.title
+                    };
+                    
+                    var filledTemplate = fillTemplate(template, data);
+                    $characters.append(filledTemplate);
+            });
+            }
         });
-        }
-    });
+
+        music("angry");
+
+
     });
 
     $('#sad-button').click(function(){
@@ -53,6 +119,9 @@ $(document).ready(function(){
             });
             }
         });
+        music("sad");
+
+        
 
         
     });
@@ -79,6 +148,8 @@ $(document).ready(function(){
             });
             }
         });  
+        music("love");
+
     });
 
     $('#motivational-button').click(function(){
@@ -104,6 +175,7 @@ $(document).ready(function(){
             }
         });
 
+        music("motivational");
         
     });
 
@@ -126,34 +198,57 @@ $(document).ready(function(){
 
     //**************************CÓDIGO AMBAR**********************************************
     //COMIENZA CÓDIGO SPOTIFY
-    /*
-    var apiKey = "BQBC8KJxYcpXAs6_KRj0QsvdjqFW6qrJMmTYJ9d9QqYllzKj_oamVGRJPGAgYsvgfKmgC037YFwZTRQDLrQ53C0COVXiwqVBsYivr0TERnqhKsCzUEobLP62DdaW4qyQY4qJOTuvgksHaUm0_FdpCv0S5S8v_Vy2htAQHfULHpfAaS9l9IzZzpu2EtDRbkcE3wzsMba8ajpakhn1C6z96avZ0fEVhpziNPoLrw6fT0tBAmNJgcpwE4DErF0bxOsWYUGoMyg";
 
+    // var apiKey = "BQBe1GwJebNeGhezXbytKxGTiy-DJcWqiO15nJ1UeSmWtlOP62guGdV12UvwBBugDFvRTjXb5BU8iYqlh5inPfhv2QYKB5vy8z-kifL_6IUHZH8xGIug3PkogcGa8D368SKzdsb3lFwlKg2bHvjDDohjE5OarqPbSuEZDwhyrLOB2ZUUUxYCdmgQ7ilGlwSGR3AgtBLrD3YbDJHO_zHdugyF9tbEkHO6unjmOMAQ_-xKq0hNHmhk6WvP0kxWwgSr1gQRATc";
+
+
+    // $.ajax({
+    //     url: 'https://api.spotify.com/v1/search?q=sad%20music%20&type=track&market=mx&limit=3',
+
+    //     headers: {
+    //         'Authorization': 'Bearer ' + apiKey
+    //     },
+    //     success: function(response){
+    //         console.log(response);
+    //         var data = [];
+    //         var template = '<iframe src="https://open.spotify.com/embed/track/{{id}}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+    //         var $containerSongs = $("#music-area");
+    //         console.log(template);
+
+    //         response.tracks.items.forEach( function(song){
+    //             data.push(song.id);
+                
+    //             console.log(data);
+    //         });
+
+    //         var filledTemplate = fillTemplateSong(template, data);
+    //         // $containerSongs.append(filledTemplate);
+
+
+
+
+    //     },
+    //     error: function (xhr, ajaxOptions, thrownError) {
+    //         if(xhr.status == 401){
+    //             console.log("token expirado");
+    //         } else {
+    //             alert(xhr.status);
+    //             alert(thrownError);
+    //         }  
+    //     }
+    // });
+
+
+   
     
-    // la variable search se declarará antes y guardará el valor del input del buscador
-    // search = encodeURIComponent(search);// parsea el valor del input si tiene espacios.
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    };
 
-    $.ajax({
-        url: 'https://api.spotify.com/v1/search?q=sad&type=track&market=mx&limit=10',
 
-        headers: {
-            'Authorization': 'Bearer ' + apiKey
-        },
-        success: function(response){
-            console.log(response);
-        },
-        error: function (xhr, ajaxOptions, thrownError) {
-            if(xhr.status == 401){
-                console.log("token expirado");
-            } else {
-                alert(xhr.status);
-                alert(thrownError);
-            }
-            
-        }
-    });
 
-*/
     //TERMINA CÓDIGO SPOTIFY
     //**************************SE CIERRA CÓDIGO AMBAR*****************************************
 
