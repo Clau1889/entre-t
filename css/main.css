@@ -1,0 +1,38 @@
+body{
+   box-sizing: border-box;
+}
+
+/*
+.logo {
+    background-image: url(../assets/images/logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 15rem;
+    position: absolute;
+    margin:0;
+    top: 15rem;
+} */
+
+/*******HERO PAGE*********/
+#card-log-in{
+    display: block;
+    height: auto;
+    margin-top: 10rem;
+    margin-left: 0.5rem;
+    position: relative;
+    width: 100%;
+}
+
+#img-log-in{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#card-btns{
+    position: relative;
+}
+
+
+
+
