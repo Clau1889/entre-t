@@ -1,54 +1,132 @@
 $(document).ready(function(){
+    //INICIALIZACION CARRUSEL
+    $('.carousel').carousel({
+        interval: 2000
+    })
 
     //INICIO CÓDIGO VIDEO
     var apiKey = 'AIzaSyDEVJfSyHmltO9EDu1Q1MEFqGDl6xEuNLM';
 
-    $('#search-button').click(function(){
-        var search = $('#search-text').val();
-        $('#characters-container').html('');
-        $('#search-text').val('');
+    $('#angry-button').click(function(){
+    //MUESTRA DOCUMENTALES (ENOJO)
+    $('#characters-container').html('');
+    $.ajax({
+        url: 'https://www.googleapis.com/youtube/v3/search?type=video&q=documentales&maxResults=3&part=snippet&key=' + apiKey,
+        success: function(response){
 
+        var template = $('#template-character').html();
+        var $characters = $('#characters-container');
+
+        response.items.forEach(function(character){
+
+                var data = {
+                    video: 'https://www.youtube.com/embed/'+character.id.videoId,
+                    title: character.snippet.title
+                };
+                
+                var filledTemplate = fillTemplate(template, data);
+                $characters.append(filledTemplate);
+        });
+        }
+    });
+    });
+
+    $('#sad-button').click(function(){
+        //MUESTRA PELICULAS TRISTES (TRISTEZA)
+        $('#characters-container').html('');
         $.ajax({
-            url: 'https://www.googleapis.com/youtube/v3/search?type=video&q='+search+'&maxResults=5&part=snippet&key=' + apiKey,
+            url: 'https://www.googleapis.com/youtube/v3/search?type=video&q=peliculatristecompleta&maxResults=3&part=snippet&key=' + apiKey,
             success: function(response){
     
             var template = $('#template-character').html();
             var $characters = $('#characters-container');
     
             response.items.forEach(function(character){
-                    console.log(character.snippet.title);
     
                     var data = {
                         video: 'https://www.youtube.com/embed/'+character.id.videoId,
                         title: character.snippet.title
                     };
                     
-                    var filledTemplate = fillTemplate(template, data); 
-                    
+                    var filledTemplate = fillTemplate(template, data);
                     $characters.append(filledTemplate);
             });
-            function fillTemplate(template, data) {
-                for(var index in data){
-                    //console.log(index);
-                    //console.log(data);
-                    var value = data[index];
-                    template = template.replace(new RegExp('{{'+index+'}}', 'g'), escapeHtml(value) );
-                };
-                return template;
             }
-            function escapeHtml(str) {
-                var div = document.createElement('div');
-                div.appendChild(document.createTextNode(str));
-                return div.innerHTML;
-            }
-        }
+        });
+
+        
     });
 
+    $('#romance-button').click(function(){
+        //MUESTRA PELICULAS ROMANTICAS (ROMANCE)
+        $('#characters-container').html('');
+        $.ajax({
+            url: 'https://www.googleapis.com/youtube/v3/search?type=video&q=pelicularomanticacompleta&maxResults=3&part=snippet&key=' + apiKey,
+            success: function(response){
+    
+            var template = $('#template-character').html();
+            var $characters = $('#characters-container');
+    
+            response.items.forEach(function(character){
+    
+                    var data = {
+                        video: 'https://www.youtube.com/embed/'+character.id.videoId,
+                        title: character.snippet.title
+                    };
+                    
+                    var filledTemplate = fillTemplate(template, data);
+                    $characters.append(filledTemplate);
+            });
+            }
+        });  
     });
-    //TERMINO CÓDIGO VIDEO
+
+    $('#motivational-button').click(function(){
+        //MUESTRA PELICULAS MOTIVACIONALES (MOTIVADO)
+        $('#characters-container').html('');
+        $.ajax({
+            url: 'https://www.googleapis.com/youtube/v3/search?type=video&q=peliculamotivadoracompleta&maxResults=3&part=snippet&key=' + apiKey,
+            success: function(response){
+    
+            var template = $('#template-character').html();
+            var $characters = $('#characters-container');
+    
+            response.items.forEach(function(character){
+    
+                    var data = {
+                        video: 'https://www.youtube.com/embed/'+character.id.videoId,
+                        title: character.snippet.title
+                    };
+                    
+                    var filledTemplate = fillTemplate(template, data);
+                    $characters.append(filledTemplate);
+            });
+            }
+        });
+
+        
+    });
+
+    function fillTemplate(template, data) {
+        for(var index in data){
+            //console.log(index);
+            //console.log(data);
+            var value = data[index];
+            template = template.replace(new RegExp('{{'+index+'}}', 'g'), escapeHtml(value) );
+        };
+        return template;
+    }
+    
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    }
+    //TERMINO CÓDIGO VIDEO******
 
     //**************************CÓDIGO AMBAR**********************************************
     //COMIENZA CÓDIGO SPOTIFY
+    /*
     var apiKey = "BQBC8KJxYcpXAs6_KRj0QsvdjqFW6qrJMmTYJ9d9QqYllzKj_oamVGRJPGAgYsvgfKmgC037YFwZTRQDLrQ53C0COVXiwqVBsYivr0TERnqhKsCzUEobLP62DdaW4qyQY4qJOTuvgksHaUm0_FdpCv0S5S8v_Vy2htAQHfULHpfAaS9l9IzZzpu2EtDRbkcE3wzsMba8ajpakhn1C6z96avZ0fEVhpziNPoLrw6fT0tBAmNJgcpwE4DErF0bxOsWYUGoMyg";
 
     
@@ -75,7 +153,7 @@ $(document).ready(function(){
         }
     });
 
-
+*/
     //TERMINA CÓDIGO SPOTIFY
     //**************************SE CIERRA CÓDIGO AMBAR*****************************************
 
@@ -100,3 +178,18 @@ $(document).ready(function(){
 // });
 
 
+function fillTemplate(template, data) {
+    for(var index in data){
+        //console.log(index);
+        //console.log(data);
+        var value = data[index];
+        template = template.replace(new RegExp('{{'+index+'}}', 'g'), escapeHtml(value) );
+    };
+    return template;
+}
+
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+}
