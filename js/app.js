@@ -65,10 +65,10 @@ $(document).ready(function(){
         }
     });
 
-    document.getElementById("logout").addEventListener('click',function (){
-    //console.log('click');
-    firebase.auth().signOut();
-    });
+    // document.getElementById("logout").addEventListener('click',function (){
+    // //console.log('click');
+    // firebase.auth().signOut();
+    // });
 
 });
 
