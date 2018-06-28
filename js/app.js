@@ -1,5 +1,5 @@
 function music(clave){
-    var apiKeySong = "BQCJCnYnpfHBvcfrzFGMRu7xwMdq33BaZJhX8cQmckL08f2Th3KTUZnqZL6aoeJttI_Ic27q_2bvF2gV3emLYawMhNPwZEHMLRxxhYnBzCRZz8HV_YdvAbMTwJ7DLYBv4pgn0GCw2d-GYlLZ4A9qJCG8_P3izD-JNf-Aeh4TIaMm1huC9n1y_V1oMCKVs0woMqxYM7EK4Q9NtyVFz-UPWJmOaTQpyjRtxiFMG55gjSgDQqCfwx1rjTUGEIIWhltiILIK-K0";
+    var apiKeySong = "BQBZPxL0o_gkFa7mtbPp-odOPeDUwmXUTRxxxLxHrqFsLOHK935dKmq9caXgW885lzEskloCBbnp1PDsA9vGnYPOcYhLBOQb0GJ_NvJrNnwEnftgPSMhHC5tEfZs-Nca5y6tNZ7MHMY2rRLOugAZsOO4pebsPWXYa-OrBHCsCXHRWtCFw0n5pyPCF_vEH_A_2W7T2CErA2WpcilHTzXAXT4iIBlMxdLYT6tIiNlyco960jX_yazijRIMUcXY8WCKFEIqr_g";
 
     function fillTemplateSong(template, data) {
         var finalTemplate = "";
