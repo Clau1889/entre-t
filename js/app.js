@@ -1,8 +1,12 @@
 $(document).ready(function(){
-    var apiKey = "BQA39EPb8DyNpLMU7RmcJ397_57DxY4039UrbGqCnbskgz4wGQIEom-iStWdoLo2WHIOMunyW3UTuhMEt7hZerf4PYtw1WL0n0Ky_X6VMTg0SHXDNSo3xQ7Omwo9otKkJE6_mSKOaUl4wV6EblJeeOuIKEid8qxgAHKcG2jniNV4S9pdrYmvwYJy9Xw4x7JDE4v9hWnAjfyWGDZyO7x_joBzs0X_KRleJhPDd5CIG2http817MpF1cU3DcXT3TyjZRVK3oM";
+    var apiKey = "BQCe-j3lY7L_WZ88QzCzir3UY2KjecsArRhAqVY32B-ndBMFEtALthjiNRzFZB9AcZbWrVQupzmEsLBM6Xjj37xDZ1aZyO3KEW0n2zWJx41cP5EglFB7Y6wjUM1ouP0vT3J8KxRRWvrbGMGgmpM-on7I5t7QZAgLr1ykYDQhWerfFlc_J6Fj5Ae5wGSmOA8PUAoO1wXJD1vAt-I4nYlGfWrZ8dD8rK8GKznpYJObaxPI3Dx0VROub5QCbkZ82axkUGKCALc";
+
+    
+    // la variable search se declarará antes y guardará el valor del input del buscador
+    // search = encodeURIComponent(search);// parsea el valor del input si tiene espacios.
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/search?q=maroon%20five&type=track&market=mx&limit=20',
+        url: 'https://api.spotify.com/v1/search?q=maroon%20five&type=track&market=mx&limit=10',
 
         headers: {
             'Authorization': 'Bearer ' + apiKey
@@ -16,10 +20,10 @@ $(document).ready(function(){
         }
     });
 
-    document.getElementById("logout").addEventListener('click',function (){
-    //console.log('click');
-    firebase.auth().signOut();
-    });
+    // document.getElementById("logout").addEventListener('click',function (){
+    // //console.log('click');
+    // firebase.auth().signOut();
+    // });
 
 });
 
