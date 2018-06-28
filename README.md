@@ -1,11 +1,11 @@
-# _Beauty To Go_
+# _Entre-T_
 
 * **Integrantes del equipo:** _Ambar del valle, Lourdes Atilano, Berenice Tovar, Claudia Trujillo Blanco_
 * **Curso:** _Entre-T_
 ***
 
-## Objetivo del producto
-##### :
+## Objetivo del producto;
+#####
 * Enfocada al Entretenimiento.
 * Consumo de API's.
 -----
