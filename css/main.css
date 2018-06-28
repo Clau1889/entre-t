@@ -74,6 +74,11 @@ main.border div.jumbotron{
     position: relative;
 }
 
+#h4-user {
+    position: relative;
+    left: 2em;
+}
+
 /*Books Section*/
 
 div.left {
@@ -115,4 +120,9 @@ div#books-motivational {
 }
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> upstream/master
 
