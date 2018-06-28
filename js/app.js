@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    //INICIALIZACION CARRUSEL
+    $('.carousel').carousel({
+        interval: 2000
+    })
 
     //INICIO CÓDIGO VIDEO
     var apiKey = 'AIzaSyDEVJfSyHmltO9EDu1Q1MEFqGDl6xEuNLM';
