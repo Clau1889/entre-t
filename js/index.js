@@ -54,7 +54,7 @@ document.getElementById("btn-logout").addEventListener('click',function (){
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-    window.location="app.html";
+    window.location="user.html";
     } else {
     console.log('desloggeado');
     }
