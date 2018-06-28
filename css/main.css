@@ -33,6 +33,47 @@ body{
     position: relative;
 }
 
+/*Books Section*/
+
+div.left {
+    float: left;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+
+}
+
+div.right {
+    float: right;
+    width: 50%;
+    height: 50%;
+}
+
+div#books-angry{
+    display: none;
+}
+
+div#books-sad{
+    display: none;
+}
+
+div#books-romance{
+    display: none;
+}
+
+div#books-angry{
+    display: none;
+}
+
+div#books-motivational {
+    display: none;
+}
+
+.title-info {
+    display: none;
+}
+
+
 
 
 
