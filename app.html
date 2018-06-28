@@ -9,32 +9,51 @@
     </head>
     <body>
         <!-- NAV BAR -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">_LOGO_</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+            <div id="line-menu" class="col 12">
+        
+                <!--Menu Hamburguesa-->
+                <button class="col-2 navbar-toggler border" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <a class="col-3 offset-2 navbar-brand border" href="index.html">
+                    <img id="logo-nav" class="img-nav" src="" alt="logo">
+                </a>
+        
+                <!--Imagen Usuario-->
+                <a id="photo-user" class="col-2 offset-2 img-nav border" href="#">
+                    <img src="" alt="user">
+                </a>
+        
+                <div id="navbarSupportedContent" class="col-5 collapse navbar-collapse border">
+                    <ul class="navbar-nav mr-auto nav-item active">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Clasificacion
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#videos-area"> Videos </a>
+                                <a class="dropdown-item" href="#music-area"> Música </a>
+                                <a class="dropdown-item" href="#books-area"> Libros </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        
+            </div>
             
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#videos-area"> Videos </a>
-                    <a class="dropdown-item" href="#music-area"> Música </a>
-                    <a class="dropdown-item" href="#books-area"> Libros </a>
-                    </div>
-                </li>
-                </ul>
+            <!--Buscador-->
+            <div class="row border">
+            
             </div>
         </nav>
+
         <!-- MAIN -->
-        <main>
+        <main class="border ">
+
             <!-- AREA VIDEOS -->
             <!--BUSQUEDA *** Contenedor videos-->
             <form>
@@ -68,9 +87,10 @@
                     </a>
                 </div>
             </section>
+
             <!-- MUSIC VIDEOS -->
-            <section id="music-area">
-                    <iframe src="https://open.spotify.com/embed/track/49G2GRMqUyixCTnaxZ8Ypm" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+            <section id="music-area border" class="border">
                 <div id="music-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -87,8 +107,9 @@
                     </a>
                 </div>
             </section>
+
             <!-- BOOKS VIDEOS -->
-            <section id="books-area">
+            <section id="books-area border" class="border">
                 <div id="music-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -106,6 +127,7 @@
                 </div>
             </section>
         </main>
+
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>

@@ -75,8 +75,10 @@ $(document).ready(function(){
         }
     });
 
+
     //TERMINA CÓDIGO SPOTIFY
     //**************************SE CIERRA CÓDIGO AMBAR*****************************************
+
 
     // document.getElementById("logout").addEventListener('click',function (){
     // //console.log('click');
