@@ -1,0 +1,285 @@
+{
+  "artists": {
+    "href": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=US&offset=5&limit=10",
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3waFze2hMUecCLD0BJ4rvU"
+        },
+        "followers": {
+          "href": null,
+          "total": 7852
+        },
+        "genres": [
+          "dark wave",
+          "ethereal wave",
+          "gothic rock",
+          "medieval folk",
+          "neoclassical",
+          "steampunk"
+        ],
+        "href": "https://api.spotify.com/v1/artists/3waFze2hMUecCLD0BJ4rvU",
+        "id": "3waFze2hMUecCLD0BJ4rvU",
+        "images": [
+          {
+            "height": 432,
+            "url": "https://i.scdn.co/image/bf5ef59f96049d1969f99fb292f15607efd4fa42",
+            "width": 279
+          },
+          {
+            "height": 310,
+            "url": "https://i.scdn.co/image/420c64d3d03da48bccee6dcba3abb2db67fa6772",
+            "width": 200
+          },
+          {
+            "height": 99,
+            "url": "https://i.scdn.co/image/46bf71307e4debfd814bf47b344af8b19759ed57",
+            "width": 64
+          }
+        ],
+        "name": "Faith And The Muse",
+        "popularity": 26,
+        "type": "artist",
+        "uri": "spotify:artist:3waFze2hMUecCLD0BJ4rvU"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/15qpUkIDVVWsb60MTzCVsJ"
+        },
+        "followers": {
+          "href": null,
+          "total": 88
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/15qpUkIDVVWsb60MTzCVsJ",
+        "id": "15qpUkIDVVWsb60MTzCVsJ",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/13245132dd3751e58db6d3a94bc93aebb496a6e8",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/b75915f7e064a2645343a5ee29c37726d0defe3e",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/64803e843e21fd189cd618ba8dcb3dba11c52811",
+            "width": 64
+          }
+        ],
+        "name": "Clip Muse",
+        "popularity": 25,
+        "type": "artist",
+        "uri": "spotify:artist:15qpUkIDVVWsb60MTzCVsJ"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0oYf9u7u00PBfFUDY6B00U"
+        },
+        "followers": {
+          "href": null,
+          "total": 10
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/0oYf9u7u00PBfFUDY6B00U",
+        "id": "0oYf9u7u00PBfFUDY6B00U",
+        "images": [],
+        "name": "M.U.S.E.",
+        "popularity": 0,
+        "type": "artist",
+        "uri": "spotify:artist:0oYf9u7u00PBfFUDY6B00U"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4L6i1I6tFpc1bKui5coGme"
+        },
+        "followers": {
+          "href": null,
+          "total": 5102
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/4L6i1I6tFpc1bKui5coGme",
+        "id": "4L6i1I6tFpc1bKui5coGme",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/a170a5f6cfeb5745f2db1ad2aa33f84609e5a9f0",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/7f8533f5db98a9e1b5d13af9f4ead3d055e48fc8",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/a1d7062e82df44f379bae26f71aadccd1bbbb589",
+            "width": 160
+          }
+        ],
+        "name": "Muse",
+        "popularity": 7,
+        "type": "artist",
+        "uri": "spotify:artist:4L6i1I6tFpc1bKui5coGme"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0inqYzOUTMjqLUEZ4I7fBA"
+        },
+        "followers": {
+          "href": null,
+          "total": 2
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/0inqYzOUTMjqLUEZ4I7fBA",
+        "id": "0inqYzOUTMjqLUEZ4I7fBA",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/7d1b61d330e0e80cb836e5b2a33783a5d021009e",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/48fc330ca901fb7a6c9356f4402b380317de09c5",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ee6cc6264de5e53f6ff58e78de206bb7b0399170",
+            "width": 64
+          }
+        ],
+        "name": "MUSE",
+        "popularity": 0,
+        "type": "artist",
+        "uri": "spotify:artist:0inqYzOUTMjqLUEZ4I7fBA"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3TN2e4aym8jdMv7uxWuMa5"
+        },
+        "followers": {
+          "href": null,
+          "total": 1
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/3TN2e4aym8jdMv7uxWuMa5",
+        "id": "3TN2e4aym8jdMv7uxWuMa5",
+        "images": [],
+        "name": "MUSE",
+        "popularity": 0,
+        "type": "artist",
+        "uri": "spotify:artist:3TN2e4aym8jdMv7uxWuMa5"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3i2BIU5Mp9c3Rsit2WCfbx"
+        },
+        "followers": {
+          "href": null,
+          "total": 1
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/3i2BIU5Mp9c3Rsit2WCfbx",
+        "id": "3i2BIU5Mp9c3Rsit2WCfbx",
+        "images": [],
+        "name": "Muse",
+        "popularity": 7,
+        "type": "artist",
+        "uri": "spotify:artist:3i2BIU5Mp9c3Rsit2WCfbx"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1zFNYw5kgA7UEKWqNHf1Et"
+        },
+        "followers": {
+          "href": null,
+          "total": 1709
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/1zFNYw5kgA7UEKWqNHf1Et",
+        "id": "1zFNYw5kgA7UEKWqNHf1Et",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/37b8c747761d4e769f50cafe0cfac5e5699d11c4",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/1dbe9563251b3a2411a08e116214ecdc72ea5d36",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/019776540e398dae278322f9f030f36afb0614d2",
+            "width": 64
+          }
+        ],
+        "name": "Dangerous Muse",
+        "popularity": 13,
+        "type": "artist",
+        "uri": "spotify:artist:1zFNYw5kgA7UEKWqNHf1Et"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/5l8lZmnKzCAUKKtNZMzbVO"
+        },
+        "followers": {
+          "href": null,
+          "total": 2
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/5l8lZmnKzCAUKKtNZMzbVO",
+        "id": "5l8lZmnKzCAUKKtNZMzbVO",
+        "images": [],
+        "name": "Muse And The Forgetting",
+        "popularity": 10,
+        "type": "artist",
+        "uri": "spotify:artist:5l8lZmnKzCAUKKtNZMzbVO"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/7dwv5d4pNWa18YFMiXZiFi"
+        },
+        "followers": {
+          "href": null,
+          "total": 99
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/7dwv5d4pNWa18YFMiXZiFi",
+        "id": "7dwv5d4pNWa18YFMiXZiFi",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/2094e57ac2d673414f5a733b1db969fcb402567d",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/56849064097581066c7d2051e5b5a464dad08f52",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/0767244f8c471f4b8f2ac1e7552ce15c6a3d2d8c",
+            "width": 160
+          }
+        ],
+        "name": "The Muse Maker",
+        "popularity": 14,
+        "type": "artist",
+        "uri": "spotify:artist:7dwv5d4pNWa18YFMiXZiFi"
+      }
+    ],
+    "limit": 10,
+    "next": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=US&offset=15&limit=10",
+    "offset": 5,
+    "previous": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=US&offset=0&limit=10",
+    "total": 206
+  }
+}
