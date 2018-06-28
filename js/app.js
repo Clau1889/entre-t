@@ -280,17 +280,19 @@ $(document).ready(function(){
 
 });
 
-// firebase.auth().onAuthStateChanged(function(user) {
-//     if (user) {
-//       //console.log(user);
-//       //console.log(user.displayName);
-//       //console.log(user.photoURL);
-//       //console.log(user.uid)
-//     } else {
-//       console.log('desloggeado');
-//       window.location="index.html";
-//     }
-// });
+/*
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      //console.log(user);
+       //console.log(user.displayName);
+      //console.log(user.photoURL);
+       //console.log(user.uid)
+       4('#profile-user').removeClass(hidden);
+     } else {
+       console.log('desloggeado');
+       window.location="index.html";
+     }
+});*/
 
 
 function fillTemplate(template, data) {
