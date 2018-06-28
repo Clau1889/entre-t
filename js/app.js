@@ -49,7 +49,7 @@ $(document).ready(function(){
 
     //**************************CÓDIGO AMBAR**********************************************
     //COMIENZA CÓDIGO SPOTIFY
-    var apiKey = "BQAnCSZCdJIrG3djPLvmdT67c5jKa6RuMRTUPVuMBjywkqA6O4Bsz3FZ_r5tZMvnc6g265246IaAS0PnIfeMy0UcYobLgqMjwXx8BisrsgTum4B8Hk6JZnh11VVmmXTrrg1CRV4d4oDhY56xeTHUYgzmuYUKJLS0bpqFxcdr0E-erHQ91p277uTUWXay_dHLM1itWXIIpARPtfVSaoCJrhky7bqdhby5T8j2XLa9QWJZbmfK75WBbxixcYrHd4LFlHWM-5o";
+    var apiKey = "BQBe1GwJebNeGhezXbytKxGTiy-DJcWqiO15nJ1UeSmWtlOP62guGdV12UvwBBugDFvRTjXb5BU8iYqlh5inPfhv2QYKB5vy8z-kifL_6IUHZH8xGIug3PkogcGa8D368SKzdsb3lFwlKg2bHvjDDohjE5OarqPbSuEZDwhyrLOB2ZUUUxYCdmgQ7ilGlwSGR3AgtBLrD3YbDJHO_zHdugyF9tbEkHO6unjmOMAQ_-xKq0hNHmhk6WvP0kxWwgSr1gQRATc";
 
     
     // la variable search se declarará antes y guardará el valor del input del buscador
@@ -63,6 +63,23 @@ $(document).ready(function(){
         },
         success: function(response){
             console.log(response);
+            var data = [];
+            var template = '<iframe src="https://open.spotify.com/embed/track/{{id}}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            var $containerSongs = $("#music-area");
+            console.log(template);
+
+            response.tracks.items.forEach( function(song){
+                data.push(song.id);
+                
+                console.log(data);
+            });
+
+            var filledTemplate = fillTemplate(template, data);
+            // $containerSongs.append(filledTemplate);
+
+
+
+
         },
         error: function (xhr, ajaxOptions, thrownError) {
             if(xhr.status == 401){
@@ -70,10 +87,34 @@ $(document).ready(function(){
             } else {
                 alert(xhr.status);
                 alert(thrownError);
-            }
-            
+            }  
         }
     });
+
+    function fillTemplate(template, data) {
+        var finalTemplate = "";
+        console.log(template); 
+        // var finalTemplate ="";
+        for(var index in data){
+            console.log(template); 
+            console.log("lala");
+            var value = data[index];
+            console.log(value)
+            // template = template.replace(new RegExp('{{'+index+'}}', 'g'), escapeHtml(value) );
+            finalTemplate = template.replace('{{id}}', value);
+            console.log(finalTemplate);
+
+            $("#song").append(finalTemplate)
+        };
+        
+        // return template;
+    };
+    
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    };
 
 
     //TERMINA CÓDIGO SPOTIFY
