@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     //INICIO CÓDIGO VIDEO
     var apiKey = 'AIzaSyDEVJfSyHmltO9EDu1Q1MEFqGDl6xEuNLM';
 
@@ -46,12 +47,16 @@ $(document).ready(function(){
     });
     //TERMINO CÓDIGO VIDEO
 
-    //CÓDIGO AMBAR****
-    /*
-    var apiKey = "BQA39EPb8DyNpLMU7RmcJ397_57DxY4039UrbGqCnbskgz4wGQIEom-iStWdoLo2WHIOMunyW3UTuhMEt7hZerf4PYtw1WL0n0Ky_X6VMTg0SHXDNSo3xQ7Omwo9otKkJE6_mSKOaUl4wV6EblJeeOuIKEid8qxgAHKcG2jniNV4S9pdrYmvwYJy9Xw4x7JDE4v9hWnAjfyWGDZyO7x_joBzs0X_KRleJhPDd5CIG2http817MpF1cU3DcXT3TyjZRVK3oM";
+    //**************************CÓDIGO AMBAR**********************************************
+    //COMIENZA CÓDIGO SPOTIFY
+    var apiKey = "BQBC8KJxYcpXAs6_KRj0QsvdjqFW6qrJMmTYJ9d9QqYllzKj_oamVGRJPGAgYsvgfKmgC037YFwZTRQDLrQ53C0COVXiwqVBsYivr0TERnqhKsCzUEobLP62DdaW4qyQY4qJOTuvgksHaUm0_FdpCv0S5S8v_Vy2htAQHfULHpfAaS9l9IzZzpu2EtDRbkcE3wzsMba8ajpakhn1C6z96avZ0fEVhpziNPoLrw6fT0tBAmNJgcpwE4DErF0bxOsWYUGoMyg";
+
+    
+    // la variable search se declarará antes y guardará el valor del input del buscador
+    // search = encodeURIComponent(search);// parsea el valor del input si tiene espacios.
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/search?q=maroon%20five&type=track&market=mx&limit=20',
+        url: 'https://api.spotify.com/v1/search?q=sad&type=track&market=mx&limit=10',
 
         headers: {
             'Authorization': 'Bearer ' + apiKey
@@ -60,10 +65,20 @@ $(document).ready(function(){
             console.log(response);
         },
         error: function (xhr, ajaxOptions, thrownError) {
-            alert(xhr.status);
-            alert(thrownError);
+            if(xhr.status == 401){
+                console.log("token expirado");
+            } else {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+            
         }
     });
+
+
+    //TERMINA CÓDIGO SPOTIFY
+    //**************************SE CIERRA CÓDIGO AMBAR*****************************************
+
 
     // document.getElementById("logout").addEventListener('click',function (){
     // //console.log('click');
@@ -72,16 +87,16 @@ $(document).ready(function(){
 
 });
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      //console.log(user);
-      //console.log(user.displayName);
-      //console.log(user.photoURL);
-      //console.log(user.uid)
-    } else {
-      console.log('desloggeado');
-      window.location="index.html";
-    }*/
-});
+// firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//       //console.log(user);
+//       //console.log(user.displayName);
+//       //console.log(user.photoURL);
+//       //console.log(user.uid)
+//     } else {
+//       console.log('desloggeado');
+//       window.location="index.html";
+//     }
+// });
 
-//SE CIERRA CÓDIGO AMBAR
+
