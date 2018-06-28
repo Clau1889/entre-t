@@ -140,3 +140,8 @@ div#books-motivational {
 div#song > iframe{
     margin-top: 15px;
 }
+
+/* Bordes del menu hamburguesa */
+.navbar-toggler {
+    border-width: 0;
+}
