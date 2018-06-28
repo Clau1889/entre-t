@@ -6,22 +6,37 @@ $(document).ready(function () {
     // }, 1000);
 });    
 
-/*
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {opacity: 0.8});
-});*/
-
 document.getElementById("btn-signup").addEventListener('click',function(){
     //console.log("sign up");
     $('#modal-SignUp').modal('show');
+    
+    /*firebase.auth().signInWithPopup(provider).then(function (result) {
+        saveNewUsers(email, passwordUser);
+
+        var emailUser = $('#input-email').val();
+        var passwordUser = $('#input-password').val();
+    };
+
+    firebase.database().ref("users/"+ user.uid).set(userInfo);
+
+    $('#input-email').val('');
+    $('#input-password').val('');*/
+
 });
 
+/* Función para guardar usuarios nuevos en database */
+function saveNewUsers(email,password){
+
+};
+
+
+
 document.getElementById("btn-login").addEventListener('click',function(){
-    console.log('login');
-    /*var provider = new firebase.auth.GoogleAuthProvider();*/
+    //console.log('login');
     
-    /* firebase.auth().signInWithPopup(provider)
+    var provider = new firebase.auth.GoogleAuthProvider();
+    
+    firebase.auth().signInWithPopup(provider)
     .then(function(result){
         saveUser(result.user);
     })
@@ -34,20 +49,20 @@ document.getElementById("btn-login").addEventListener('click',function(){
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
-    });*/
+    });
 
 });
 
 document.getElementById("btn-logout").addEventListener('click',function (){
-    console.log('logout');
-    //firebase.auth().signOut();
+    //console.log('logout');
+    firebase.auth().signOut();
 });
 
-/*firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     window.location="app.html";
     } else {
     console.log('desloggeado');
     }
-});*/
+});
 
