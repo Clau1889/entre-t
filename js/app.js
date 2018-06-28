@@ -15,7 +15,7 @@ function music(clave){
             finalTemplate = template.replace('{{id}}', value);
             console.log(finalTemplate);
 
-            $("#song").append(finalTemplate)
+            $("#song").append(finalTemplate);
         };
         
         return template;
@@ -94,6 +94,12 @@ $(document).ready(function(){
 
         music("angry");
 
+        $('#books-angry').show();
+        $('#books-sad').hide();
+        $('#books-romance').hide();
+        $('#books-motivational').hide();
+    
+        $('.title-info').show();
 
     });
 
@@ -121,9 +127,12 @@ $(document).ready(function(){
         });
         music("sad");
 
-        
+        $('#books-angry').hide();
+        $('#books-sad').show();
+        $('#books-romance').hide();
+        $('#books-motivational').hide();
 
-        
+        $('.title-info').show();
     });
 
     $('#romance-button').click(function(){
@@ -150,6 +159,12 @@ $(document).ready(function(){
         });  
         music("love");
 
+        $('#books-angry').hide();
+        $('#books-sad').hide();
+        $('#books-romance').show();
+        $('#books-motivational').hide();
+
+        $('.title-info').show();
     });
 
     $('#motivational-button').click(function(){
@@ -176,6 +191,13 @@ $(document).ready(function(){
         });
 
         music("motivational");
+
+        $('#books-angry').hide();
+        $('#books-sad').hide();
+        $('#books-romance').hide();
+        $('#books-motivational').show();
+
+        $('.title-info').show();
         
     });
 
@@ -238,8 +260,6 @@ $(document).ready(function(){
     //     }
     // });
 
-
-   
     
     function escapeHtml(str) {
         var div = document.createElement('div');
