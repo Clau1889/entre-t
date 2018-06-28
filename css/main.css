@@ -74,6 +74,19 @@ main.border div.jumbotron{
     position: relative;
 }
 
+#h4-user {
+    position: relative;
+    left: 2em;
+}
+/* add View */
+#h2-user-view{
+    padding-top: 20%;
+}
+
+#logo-add {
+    padding-left: 43%;
+}
+
 /*Books Section*/
 
 div.left {
@@ -115,4 +128,9 @@ div#books-motivational {
 }
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> upstream/master
 
