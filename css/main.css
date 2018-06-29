@@ -132,4 +132,15 @@ div#song > iframe{
     margin-top: 15px;
 }
 
+/*******SECCION LIBROS**********/
+.title-info{
+    margin-top: 1rem;
+}
 
+#text-book1{
+    padding-left: 40%;
+}
+
+#img-book1{
+    padding-left: 40%;
+}
