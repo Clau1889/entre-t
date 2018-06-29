@@ -17,11 +17,13 @@ body{
 /*******HERO PAGE*********/
 #line-menu {
     display: inline-flex;
+    width: 100%;
+    padding: 0;
 }
 
 #card-log-in{
     display: block;
-    height: auto;
+    height: 11em;
     margin-top: 10rem;
     margin-left: 0.5rem;
     position: relative;
@@ -41,6 +43,7 @@ body{
     position: relative;
     padding-top: 19px;
     padding-left: 8px;
+    color: white;
     /*border: 1px solid blue;*/
 }
 
@@ -48,6 +51,12 @@ body{
     position: relative;
 }
 
+#profile-user {
+    position: relative;
+    left: .8em;
+    top: .6em;
+    padding-left: 0;
+}
 /*hidden{
     display: none;
 }*/
@@ -84,7 +93,7 @@ main.border div.jumbotron{
 }
 
 #logo-add {
-    padding-left: 43%;
+    margin-top: 3em;
 }
 
 /*Books Section*/
@@ -132,15 +141,7 @@ div#song > iframe{
     margin-top: 15px;
 }
 
-/*******SECCION LIBROS**********/
-.title-info{
-    margin-top: 1rem;
-}
-
-#text-book1{
-    padding-left: 40%;
-}
-
-#img-book1{
-    padding-left: 40%;
+/* Bordes del menu hamburguesa */
+.navbar-toggler {
+    border-width: 0;
 }
